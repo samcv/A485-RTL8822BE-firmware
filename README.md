@@ -44,14 +44,14 @@ dd if=rtwlane.sys of=rtl8822befw.bin skip=4932176 bs=1 count=78320
 Final result should have the following checksum:
 `0017b27df0dcd9b944f40fce873487b80c3d9eb4  rtl8822befw.bin`
 
-What | offset | width | Description
------------------------------------
-HALMAC_FWHDR_OFFSET_VERSION_88XX | 4 | 2 bytes | Major firmware version number
-HALMAC_FWHDR_OFFSET_SUBVERSION_88XX | 6 | 1 byte | Minor firmware version number
-HALMAC_FWHDR_OFFSET_SUBINDEX_88XX | 7 | 1 byte | Patch firmware version number
-HALMAC_FWHDR_OFFSET_MEM_USAGE_88XX | 24 | 1 byte |
-HALMAC_FWHDR_OFFSET_DMEM_SIZE_88XX | 36 | 4 bytes |
-HALMAC_FWHDR_OFFSET_IRAM_SIZE_88XX 48 | 4 bytes
+What | offset | width | Description|
+-----|--------|-------|-------------|
+HALMAC_FWHDR_OFFSET_VERSION_88XX | 4 | 2 bytes | Major firmware version number|
+HALMAC_FWHDR_OFFSET_SUBVERSION_88XX | 6 | 1 byte | Minor firmware version number|
+HALMAC_FWHDR_OFFSET_SUBINDEX_88XX | 7 | 1 byte | Patch firmware version number|
+HALMAC_FWHDR_OFFSET_MEM_USAGE_88XX | 24 | 1 byte ||
+HALMAC_FWHDR_OFFSET_DMEM_SIZE_88XX | 36 | 4 bytes ||
+HALMAC_FWHDR_OFFSET_IRAM_SIZE_88XX 48 | 4 bytes|
 
 
 # Hardware info
