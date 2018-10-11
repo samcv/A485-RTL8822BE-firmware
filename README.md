@@ -2,7 +2,7 @@
 
 ## Steps
 
-1. Download `rtl8822befw.bin`
+1. Download [`rtl8822befw.bin`](https://github.com/samcv/A485-RTL8822BE-firmware/raw/master/rtl8822befw.bin)
 2. Backup old firmware ` sudo cp /lib64/firmware/rtlwifi/rtl8822befw.bin /lib64/firmware/rtlwifi/rtl8822befw.bin.bak`
 3. Copy new firmware: `sudo cp rtl8822befw.bin /lib64/firmware/rtlwifi/rtl8822befw.bin`
 4. Reboot (though putting it to sleep may work too).
