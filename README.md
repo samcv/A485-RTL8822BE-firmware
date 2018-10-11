@@ -45,7 +45,7 @@ Final result should have the following checksum:
 `0017b27df0dcd9b944f40fce873487b80c3d9eb4  rtl8822befw.bin`
 
 What | offset | width | Description|Hex Data|Value
------|--------|-------|-------------|
+-----|--------|-------|-------------|-------|------
 HALMAC_FWHDR_OFFSET_VERSION_88XX | 4 | 2 bytes | Major firmware version number|14|20
 HALMAC_FWHDR_OFFSET_SUBVERSION_88XX | 6 | 1 byte | Minor firmware version number|04|4
 HALMAC_FWHDR_OFFSET_SUBINDEX_88XX | 7 | 1 byte | Patch firmware version number|00|0
