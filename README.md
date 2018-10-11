@@ -21,10 +21,10 @@ for this wifi card.
 The firmware shows this is version 20.4.0
 
 How did I do this?
-I downloaded the following Windows wifi driver from Lenovo
+After much debugging trying to fix the bluetooth on Linux I decided to try another approach. I downloaded the Windows wifi driver from Lenovo
 [`801373fb20311f5acc45476c7caeeb45b7fc39fb r0wrw05w.exe`](https://support.lenovo.com/us/en/downloads/ds504117)
 
-Then at `C:/DRIVERS/WLAN Driver/Source/rtwlane.sys` is a binary blob. The problem was to
+After installing it you will find a binary blob located at `C:/DRIVERS/WLAN Driver/Source/rtwlane.sys`. The problem was to
 find where in this large file the firmware was (where it started and where it ended).
 I ended up spending a lot of time in a hex editor viewing this binary blob and the current
 linux-firmware provided one. After identifying where I thought the start of the file was,
