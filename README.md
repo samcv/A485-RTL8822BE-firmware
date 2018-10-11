@@ -62,16 +62,15 @@ Simplified
 
 ```
 /* Simplified algorithm based on code in halmac_api_88xx.c */
-    dmem_pkt_size = DMEM_SIZE + HALMAC_FW_CHKSUM_DUMMY_SIZE_88XX;
-	iram_pkt_size = IRAM_SIZE + HALMAC_FW_CHKSUM_DUMMY_SIZE_88XX;
-	if ((MEM_USAGE & 4) != 0) {
-		eram_pkt_size = ERAM_SIZE;
-    }
-	if (eram_pkt_size != 0)
-		eram_pkt_size += HALMAC_FW_CHKSUM_DUMMY_SIZE_88XX;
+dmem_pkt_size = DMEM_SIZE + HALMAC_FW_CHKSUM_DUMMY_SIZE_88XX;
+iram_pkt_size = IRAM_SIZE + HALMAC_FW_CHKSUM_DUMMY_SIZE_88XX;
+if ((MEM_USAGE & 4) != 0)
+    eram_pkt_size = ERAM_SIZE;
+if (eram_pkt_size != 0)
+    eram_pkt_size += HALMAC_FW_CHKSUM_DUMMY_SIZE_88XX;
 halmac_fw_size = (HALMAC_FWHDR_SIZE_88XX + dmem_pkt_size + iram_pkt_size + eram_pkt_size);
 /* Now solving for halmac_fw_size by using our calculated values: */
-78320                       64           +   (3032+8)    + (75208+8)     + (0)
+78320          =            64           +   (3032+8)    + (75208+8)     + (0)
 
 ```
 
