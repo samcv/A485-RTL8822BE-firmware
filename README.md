@@ -2,10 +2,14 @@
 
 ## Steps
 
-1. Download [`rtl8822befw.bin`](https://github.com/samcv/A485-RTL8822BE-firmware/raw/master/rtl8822befw.bin)
-2. Backup old firmware ` sudo cp /lib64/firmware/rtlwifi/rtl8822befw.bin /lib64/firmware/rtlwifi/rtl8822befw.bin.bak`
-3. Copy new firmware: `sudo cp rtl8822befw.bin /lib64/firmware/rtlwifi/rtl8822befw.bin`
-4. Reboot (though putting it to sleep may work too).
+1. Download [`rtl8822befw.bin`](https://github.com/samcv/A485-RTL8822BE-firmware/raw/master/rtl8822befw.bin) and
+[`rtl_bt-rtl8822b_fw.bin`](https://github.com/samcv/A485-RTL8822BE-firmware/raw/master/rtl_bt-rtl8822b_fw.bin)
+2. Backup old wifi firmware ` sudo cp /lib64/firmware/rtlwifi/rtl8822befw.bin /lib64/firmware/rtlwifi/rtl8822befw.bin.bak`
+3. Backup old bluetooth firmware `sudo cp /lib64/firmware/rtl_bt/rtl8822b_fw.bin /lib64/firmware/rtl_bt/rtl8822b_fw.bin.bak`
+4. Copy new wifi firmware: `sudo cp rtl8822befw.bin /lib64/firmware/rtlwifi/rtl8822befw.bin`
+5. copy new Bluetooth firmware: `sudo cp rtl_bt-rtl8822b_fw.bin /lib64/firmware/rtlwifi/rtl8822befw.bin`
+6. Reboot (though putting it to sleep may work too).
+* Note: firmware may be in `/lib/firmware` instead of `/lib64/firmware` on some systems
 
 ## Caveats
 For me the bluetooth will only work starting the first time you put the laptop to sleep.
@@ -43,6 +47,8 @@ dd if=rtwlane.sys of=rtl8822befw.bin skip=4932176 bs=1 count=78320
 
 Final result should have the following checksum:
 `0017b27df0dcd9b944f40fce873487b80c3d9eb4  rtl8822befw.bin`
+
+The Bluetooth firmware was far easier, once the Lenovo [driver download](https://pcsupport.lenovo.com/us/en/products/LAPTOPS-AND-NETBOOKS/THINKPAD-A-SERIES-LAPTOPS/THINKPAD-A485-TYPE-20MU-20MV/downloads/DS504118) is installed, the Bluetooth firmware is at `C:/DRIVERS/Bluetooth Driver/Source/rtl8822b_mp_chip_bt40_fw_asic_rom_patch_new.dll` with sha1sum a4288e0e7b3f818d50251e8115885ed35b11beef
 
 What | offset | width | Description|Hex Data|Value
 -----|--------|-------|-------------|-------|------
