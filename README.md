@@ -12,9 +12,10 @@
 * Note: firmware may be in `/lib/firmware` instead of `/lib64/firmware` on some systems
 
 ## Caveats
-For me the bluetooth will only work starting the first time you put the laptop to sleep.
-I haven't tested yet but it may be possible to blacklist the wifi module, then load
-it later on boot, but I haven't tested this yet.
+Bluetooth will start working the first time the laptop comes out of sleep. So if you restart your computer, you will
+have to put it to sleep and wake it up. The bluetooth will then be fully functional. This is probably caused by a bug in the
+kernel code which handles loading of the bluetooth firmware. Both wifi and bluetooth firmware must be loaded to the card
+on startup and on resuming from sleep; for whatever reason the kernel doesn't try and load bluetooth firmware no boot but resume works fine.
 
 
 ## Where is this firmware from? How did you get it?
@@ -26,7 +27,7 @@ How did I do this?
 After much debugging trying to fix the bluetooth on Linux I decided to try another approach. I downloaded the Windows wifi driver from Lenovo
 [`801373fb20311f5acc45476c7caeeb45b7fc39fb r0wrw05w.exe`](https://support.lenovo.com/us/en/downloads/ds504117)
 
-After installing it you will find a binary blob located at `C:/DRIVERS/WLAN Driver/Source/rtwlane.sys`. The problem was to
+After installing it you will find a binary blob located at `C:/DRIVERS/WLAN Driver/Source/rtwlane.sys` (sha1sum `eb63b4db367003382d3189e23f57798c1661815e`). The problem was to
 find where in this large file the firmware was (where it started and where it ended).
 I ended up spending a lot of time in a hex editor viewing this binary blob and the current
 linux-firmware provided one. After identifying where I thought the start of the file was (at bytes `22 88 00`),
