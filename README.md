@@ -89,3 +89,24 @@ USB shows up as:
 `Bus 004 Device 008: ID 0bda:b023 Realtek Semiconductor Corp. `
 Wifi shows up as:
 `02:00.0 Network controller [0280]: Realtek Semiconductor Co., Ltd. RTL8822BE 802.11a/b/g/n/ac WiFi adapter [10ec:b822]`
+
+
+# 18 October Lenovo Update:
+On 18 October Lenovo published an update which also contains updated firmware,
+updating it from version 20.4.0 to 27.2.0.
+
+```
+Version: 1B: 27
+Subver: 02: 2
+patch: 0
+HALMAC_FWHDR_OFFSET_MEM_USAGE_88XX | 08 | 8
+HALMAC_FWHDR_OFFSET_DMEM_SIZE_88XX | 58 2C 00 00 | 11352
+HALMAC_FWHDR_OFFSET_IRAM_SIZE_88XX | 20 72 02 00 | 160288
+HALMAC_FWHDR_OFFSET_ERAM_SIZE_88XX | 00 00 00 00 | 0
+
+171720 = 64 + (11352 +8) + (160288+8) + 0
+```
+
+
+sha1sum of the 27.2.0 firmware is 25d2ba457bc1884e81b2579a249e960dbbc997c2
+after extracting it from rtwlane.sys.
