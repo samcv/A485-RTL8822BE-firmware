@@ -7,7 +7,7 @@
 2. Backup old wifi firmware ` sudo cp /lib64/firmware/rtlwifi/rtl8822befw.bin /lib64/firmware/rtlwifi/rtl8822befw.bin.bak`
 3. Backup old bluetooth firmware `sudo cp /lib64/firmware/rtl_bt/rtl8822b_fw.bin /lib64/firmware/rtl_bt/rtl8822b_fw.bin.bak`
 4. Copy new wifi firmware: `sudo cp rtl8822befw.bin /lib64/firmware/rtlwifi/rtl8822befw.bin`
-5. copy new Bluetooth firmware: `sudo cp rtl_bt-rtl8822b_fw.bin /lib64/firmware/rtlwifi/rtl8822befw.bin`
+5. copy new Bluetooth firmware: `sudo cp rtl_bt-rtl8822b_fw.bin /lib64/firmware/rtl_bt/rtl8822b_fw.bin`
 6. Reboot (though putting it to sleep may work too).
 * Note: firmware may be in `/lib/firmware` instead of `/lib64/firmware` on some systems
 
